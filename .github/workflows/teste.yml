@@ -1,8 +1,8 @@
-name: Cypress Tests
+name: Robot Framework Tests
 
 on:
   push:
-    branches:
+    branches: 
       - main
 
 jobs:
