@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2026-07-16T16:47:52.256289" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\robot-framework\tests">
+<suite id="s1-s1" name="Calculadora" source="C:\robot-framework\tests\calculadora.robot">
+<test id="s1-s1-t1" name="Somar Dois Numeros Positivos" line="7">
+<kw name="Soma Deve Ser Igual A" owner="keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-07-16T16:47:52.300460" level="INFO">${resultado} = 5</msg>
+<var>${resultado}</var>
+<arg>${a} + ${b}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-07-16T16:47:52.300249" elapsed="0.000242"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2026-07-16T16:47:52.300904" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resultado}</arg>
+<arg>${esperado}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-07-16T16:47:52.300763" elapsed="0.000199"/>
+</kw>
+<arg>2</arg>
+<arg>3</arg>
+<arg>5</arg>
+<doc>Soma dois numeros e verifica o resultado esperado</doc>
+<status status="PASS" start="2026-07-16T16:47:52.299460" elapsed="0.001556"/>
+</kw>
+<status status="PASS" start="2026-07-16T16:47:52.298980" elapsed="0.002120"/>
+</test>
+<test id="s1-s1-t2" name="Somar Numero Positivo E Negativo" line="10">
+<kw name="Soma Deve Ser Igual A" owner="keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-07-16T16:47:52.302153" level="INFO">${resultado} = 6</msg>
+<var>${resultado}</var>
+<arg>${a} + ${b}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-07-16T16:47:52.301985" elapsed="0.000189"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2026-07-16T16:47:52.302453" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resultado}</arg>
+<arg>${esperado}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-07-16T16:47:52.302284" elapsed="0.000229"/>
+</kw>
+<arg>10</arg>
+<arg>-4</arg>
+<arg>6</arg>
+<doc>Soma dois numeros e verifica o resultado esperado</doc>
+<status status="PASS" start="2026-07-16T16:47:52.301788" elapsed="0.000769"/>
+</kw>
+<status status="PASS" start="2026-07-16T16:47:52.301394" elapsed="0.001243"/>
+</test>
+<test id="s1-s1-t3" name="Verificar Item Na Lista" line="13">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-07-16T16:47:52.303067" level="INFO">${frutas} = ['maca', 'banana', 'uva']</msg>
+<var>${frutas}</var>
+<arg>maca</arg>
+<arg>banana</arg>
+<arg>uva</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-07-16T16:47:52.302972" elapsed="0.000114"/>
+</kw>
+<kw name="Lista Deve Conter Item" owner="keywords">
+<kw name="List Should Contain Value" owner="Collections">
+<arg>${lista}</arg>
+<arg>${item}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" start="2026-07-16T16:47:52.303400" elapsed="0.000107"/>
+</kw>
+<arg>${frutas}</arg>
+<arg>banana</arg>
+<status status="PASS" start="2026-07-16T16:47:52.303180" elapsed="0.000365"/>
+</kw>
+<status status="PASS" start="2026-07-16T16:47:52.302784" elapsed="0.000817"/>
+</test>
+<test id="s1-s1-t4" name="Verificar Texto Em Maiusculas" line="17">
+<kw name="Convert To Upper Case" owner="String">
+<msg time="2026-07-16T16:47:52.303961" level="INFO">${texto} = ROBOT FRAMEWORK</msg>
+<var>${texto}</var>
+<arg>robot framework</arg>
+<doc>Converts string to upper case.</doc>
+<status status="PASS" start="2026-07-16T16:47:52.303879" elapsed="0.000098"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${texto}</arg>
+<arg>ROBOT FRAMEWORK</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-07-16T16:47:52.304043" elapsed="0.000097"/>
+</kw>
+<status status="PASS" start="2026-07-16T16:47:52.303710" elapsed="0.000485"/>
+</test>
+<doc>Testes simples de operacoes matematicas e strings</doc>
+<status status="PASS" start="2026-07-16T16:47:52.286858" elapsed="0.017582"/>
+</suite>
+<status status="PASS" start="2026-07-16T16:47:52.257904" elapsed="0.046848"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="4" fail="0" skip="0">Tests</stat>
+<stat name="Calculadora" id="s1-s1" pass="4" fail="0" skip="0">Tests.Calculadora</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
