@@ -2,26 +2,33 @@ name: Robot Framework Tests
 
 on:
   push:
-    branches: 
+    branches:
       - main
 
 jobs:
-  cypress-run:
+  robot-run:
     runs-on: ubuntu-24.04
     steps:
       - name: Baixando projeto
         uses: actions/checkout@v4
 
-      - name: Executando teste cypress
-        uses: cypress-io/github-action@v6
+      - name: Configurando Python
+        uses: actions/setup-python@v5
         with:
-          browser: chrome
-          spec: cypress/e2e/login.cy.js
+          python-version: '3.12' # Ajuste para a versão do Python que você utiliza
+
+      - name: Instalando dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt # Arquivo onde devem estar declarados o robotframework, seleniumlibrary, etc.
+
+      - name: Executando teste Robot
+        run: robot -d results tests/ # O "-d results" salva os relatórios nessa pasta. Mude "tests/" para a sua pasta de testes.
 
       - name: Subindo relatório
         if: always() # Certifique-se de que o relatório será salvo mesmo se os testes falharem
         uses: actions/upload-artifact@v4
         with:
-          name: cypress-report # Nome do artifact
-          path: mochawesome-report # Caminho onde o relatório está salvo
+          name: robot-report # Nome do artifact
+          path: results # Caminho onde o log.html e report.html estão salvos
           retention-days: 3 # Define que o artifact expira em 3 dias
